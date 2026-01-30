@@ -17,14 +17,17 @@ const app = express()
 const PORT = process.env.PORT || 5001
 
 // Security middleware
-app.use(helmet())
-app.use(cors({
-  origin: 'https://myparent-stage-3by24ilen-arpimukhs-projects.vercel.app',
+var corsOptions = {
+  origin: 'https://myparent-stage.vercel.app',
  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
-}))
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  optionsSuccessStatus: 200
+}
+app.use(helmet())
+app.use(cors(corsOptions))
 
+app.options('*', cors(corsOptions));
 
 // Rate limiting
 const limiter = rateLimit({
@@ -44,7 +47,7 @@ app.use('/uploads', express.static('uploads'))
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/vendors', vendorRoutes)
-app.use('/api/vendor-details', vendorDetailsRoutes),
+app.use('/api/vendor-details', vendorDetailsRoutes)
 app.use('/api/dashboard', dashboardRoutes)
 app.use('/api/services', serviceRoutes)
  // ⭐ NEW LINE 2
