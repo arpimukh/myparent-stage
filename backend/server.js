@@ -20,8 +20,11 @@ const PORT = process.env.PORT || 5001
 app.use(helmet())
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'https://myparent-stage-3by24ilen-arpimukhs-projects.vercel.app',
-  credentials: true
+ credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }))
+
 
 // Rate limiting
 const limiter = rateLimit({
