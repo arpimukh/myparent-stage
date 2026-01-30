@@ -6,7 +6,7 @@ const nextConfig = {
         source: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
-          { key: "Access-Control-Allow-Origin", value: "*" }, // Replace with your domain in production
+          { key: "Access-Control-Allow-Origin", value: "https://myparent-stage-3by24ilen-arpimukhs-projects.vercel.app" }, // Replace with your domain in production
           { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
           { 
             key: "Access-Control-Allow-Headers", 
