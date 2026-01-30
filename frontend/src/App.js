@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app/api';
 
 const App = () => {
   const [callbackForm, setCallbackForm] = useState({ phone: '', name: '', message: '' });

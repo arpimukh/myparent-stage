@@ -37,7 +37,7 @@ const fetchVendors = async () => {
   setVendorError(null)
   
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}/api/vendor-details`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/vendor-details`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('authToken')}`
       }
@@ -109,7 +109,7 @@ const fetchVendors = async () => {
     setServicesError(null)
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}/api/client-services`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/client-services`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
@@ -283,7 +283,7 @@ const fetchVendors = async () => {
     const service = clientServices[index]
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}/api/client-services/${service.clientId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/client-services/${service.clientId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -367,7 +367,7 @@ const fetchVendors = async () => {
     formData.append('vendor_id', verificationModal.vendorId)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}/api/vendor-details/verify`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/vendor-details/verify`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`

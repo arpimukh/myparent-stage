@@ -11,7 +11,7 @@ const Login = ({ role, onClose, onSuccess }) => {
     setError('')
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5001'}/api/auth/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

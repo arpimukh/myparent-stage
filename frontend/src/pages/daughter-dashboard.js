@@ -24,7 +24,7 @@ const DaughterDashboard = () => {
   const fetchDashboardData = async (userId) => {
     try {
       // Fetch parents
-      const parentsRes = await fetch(`http://localhost:5001/api/dashboard/daughter/${userId}/parents`)
+      const parentsRes = await fetch(`https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app/api/dashboard/daughter/${userId}/parents`)
       const parentsData = await parentsRes.json()
       
       if (parentsData.success) {
@@ -32,7 +32,7 @@ const DaughterDashboard = () => {
       }
 
      // Fetch services
-     const servicesRes = await fetch(`http://localhost:5001/api/dashboard/daughter/${userId}/services`)
+     const servicesRes = await fetch(`https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app/api/dashboard/daughter/${userId}/services`)
      const servicesData = await servicesRes.json()
       
      if (servicesData.success) {
