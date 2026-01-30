@@ -11,9 +11,10 @@ const router = express.Router()
 
 // Ensure uploads directory exists
 const uploadsDir = 'uploads'
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true })
-}
+// arpita commented temp
+//if (!fs.existsSync(uploadsDir)) {
+//   fs.mkdirSync(uploadsDir, { recursive: true })
+// }
 
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
