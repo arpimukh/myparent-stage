@@ -30,7 +30,7 @@ export default function NewVendor() {
 
     try {
       // Updated to use Node.js backend API
-      const response = await fetch('https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app/api/vendors/register', {
+      const response = await fetch('/v1/api/vendors/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

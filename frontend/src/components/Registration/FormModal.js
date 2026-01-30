@@ -316,8 +316,8 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
 
       // Determine API endpoint
       const apiUrl = selectedRole === 'vendor'
-        ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/vendor-details/register`
-        : `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/auth/register`
+        ? `${process.env.NEXT_PUBLIC_BACKEND_URL || '/v1'}/api/vendor-details/register`
+        : `${process.env.NEXT_PUBLIC_BACKEND_URL || '/v1'}/api/auth/register`
 
       console.log('📡 Submitting to:', apiUrl)
 

@@ -209,7 +209,7 @@ const ParentDashboard = () => {
     setParentError(null)
     console.log('🔍 Fetching parent data for user ID:', userId)
     try {
-      const response = await fetch(`https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app/api/dashboard/parent/${userId}`, {
+      const response = await fetch(`/v1/api/dashboard/parent/${userId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -249,7 +249,7 @@ const ParentDashboard = () => {
   //   setServicesError(null)
 
   //   try {
-  //     // const response = await fetch('https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app/api/client-services', {
+  //     // const response = await fetch('/v1/api/client-services', {
   //     //   headers: {
   //     //     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
   //     //   }
@@ -302,7 +302,7 @@ const ParentDashboard = () => {
     setServicesError(null)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/client-services`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || '/v1'}/api/client-services`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
@@ -427,7 +427,7 @@ const ParentDashboard = () => {
     const service = clientServices[index]
     console.log(`🔄 Changing status of rownum: ${index}, service ID ${service.id} to ${newStatus}`)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/services/${service.id}/status`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || '/v1'}/api/services/${service.id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -471,7 +471,7 @@ const ParentDashboard = () => {
     console.log(`📝 Updating review for service ID ${service.id} with rating ${rating}`)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/services/${service.id}/review`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || '/v1'}/api/services/${service.id}/review`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -610,7 +610,7 @@ const ParentDashboard = () => {
     formData.append('parent_id', verificationModal.parentId)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app'}/api/dashboard/parent-details/verify`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || '/v1'}/api/dashboard/parent-details/verify`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`

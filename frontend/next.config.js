@@ -6,7 +6,7 @@ const nextConfig = {
   //       source: "/api/:path*",
   //       headers: [
   //         { key: "Access-Control-Allow-Credentials", value: "true" },
-  //         { key: "Access-Control-Allow-Origin", value: "https://myparent-stage-a2zc-avcxfo3zw-arpimukhs-projects.vercel.app" }, // Replace with your domain in production
+  //         { key: "Access-Control-Allow-Origin", value: "https://myparent-stage-a2zc.vercel.app" }, // Replace with your domain in production
   //         { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
   //         { 
   //           key: "Access-Control-Allow-Headers", 
@@ -21,9 +21,9 @@ const nextConfig = {
     return [
       {
         // 1. The path users will call on your frontend
-        source: '/api/:path*', 
+        source: '/v1/:path*', 
         // 2. The internal URL of your backend deployment
-        destination: 'https://myparent-stage-a2zc.vercel.app/api/:path*', 
+        destination: 'https://myparent-stage-a2zc.vercel.app/:path*', 
       },
     ];
   },
