@@ -17,9 +17,10 @@ const uploadsDir = 'uploads/vendor-details'
 
 // Ensure verification uploads directory exists
 const verificationUploadsDir = 'uploads/vendor-verifications'
-if (!fs.existsSync(verificationUploadsDir)) {
-  fs.mkdirSync(verificationUploadsDir, { recursive: true })
-}
+////arpita commented temp
+// if (!fs.existsSync(verificationUploadsDir)) {
+//   fs.mkdirSync(verificationUploadsDir, { recursive: true })
+// }
 
 // Multer configuration for vendor details uploads
 const storage = multer.diskStorage({
