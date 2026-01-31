@@ -209,7 +209,7 @@ const ParentDashboard = () => {
     setParentError(null)
     console.log('🔍 Fetching parent data for user ID:', userId)
     try {
-      const response = await fetch(`/v1/api/dashboard/parent/${userId}`, {
+      const response = await fetch(`v1/api/dashboard/parent/${userId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
