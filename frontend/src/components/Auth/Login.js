@@ -42,9 +42,9 @@ const Login = ({ role, onClose, onSuccess }) => {
   const getRoleConfig = () => {
     switch (role) {
       case 'parent':
-        return { icon: '👴', title: 'Parent Login', color: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)' }
+        return { icon: '👴', title: 'Client Login', color: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)' }
       case 'daughter':
-        return { icon: '👩', title: 'Daughter Login', color: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)' }
+        return { icon: '👩', title: 'RM Login', color: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)' }
       case 'vendor':
         return { icon: '🏢', title: 'Vendor Login', color: 'linear-gradient(135deg, #9f7aea 0%, #805ad5 100%)' }
       default:
