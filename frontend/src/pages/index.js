@@ -8,15 +8,15 @@ import Contact from '../components/Home/Contact'
 export default function Home() {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Parent Care Services - Compassionate Care at Home</title>
         <meta name="description" content="Professional parent care services providing comprehensive support for your loved ones" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
       
-      <Hero />
+      {/* <Hero /> */}
       <About />
-      <Services />
+      {/* <Services /> */}
       <Contact />
     </>
   )

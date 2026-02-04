@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
         
         <div className="py-6 text-center">
-          <p>&copy; 2024 Compassionate Parent Care Services. All rights reserved.</p>
+          <p>&copy;2026 Living Trail Pvt. Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

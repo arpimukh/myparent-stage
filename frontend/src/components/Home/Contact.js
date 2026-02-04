@@ -34,7 +34,7 @@ const Contact = () => {
           Get Started Today
         </h2>
         <p className="text-lg text-gray-600 mb-8">
-          Ready to provide the best care for your parent? Contact us to discuss your specific needs.
+          You are the just one step away to solve your all on demand needs from trusted vendors on the best unified platform! Why wait?.
         </p>
         
         <div className="mb-8">
@@ -42,7 +42,7 @@ const Contact = () => {
             href="/register"
             className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
           >
-            Complete Registration
+            Complete Registration Today &gt &gt &gt  
           </Link>
         </div>
 

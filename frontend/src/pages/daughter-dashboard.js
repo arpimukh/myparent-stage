@@ -63,7 +63,8 @@ const DaughterDashboard = () => {
         {/* Title */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '10px' }}>
-            Daughter's Dashboard
+            {/* Daughter's Dashboard */}
+            RM Dashboard
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px' }}>
             Manage your parents' care services and coordinate with trusted vendors for their wellbeing
@@ -81,12 +82,13 @@ const DaughterDashboard = () => {
                 Profile Type
               </div>
               <div style={{ color: '#2d3748', fontSize: '16px', fontWeight: '600' }}>
-                Daughter
+                {/* Daughter */}
+                RM
               </div>
             </div>
             <div>
               <div style={{ color: '#718096', fontSize: '12px', fontWeight: '600', marginBottom: '8px', textTransform: 'uppercase' }}>
-                Daughter Name
+                RM Name
               </div>
               <div style={{ color: '#2d3748', fontSize: '16px', fontWeight: '600' }}>
                 {userData?.name || 'N/A'}

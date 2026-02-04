@@ -207,7 +207,7 @@ const ParentDashboard = () => {
   const fetchParent = async (userId) => {
     setIsLoadingParents(true)
     setParentError(null)
-    console.log('🔍 Fetching parent data for user ID:', userId)
+    console.log('🔍 Fetching client data for user ID:', userId)
     try {
       const response = await fetch(`v1/api/dashboard/parent/${userId}`, {
         method: 'GET',
@@ -639,7 +639,7 @@ const ParentDashboard = () => {
     return (
       <>
         <Head>
-          <title>Search Results - Parent Management</title>
+          <title>Search Results - Client Management</title>
         </Head>
 
         <div style={{
@@ -772,7 +772,8 @@ const ParentDashboard = () => {
   return (
     <>
       <Head>
-        <title>Parent Management - Parent Care Services</title>
+        <title>Client Management - Client Care Services</title>
+        {/* <title>Parent Management - Parent Care Services</title> */}
       </Head>
 
       <div style={{
@@ -784,10 +785,11 @@ const ParentDashboard = () => {
           {/* Header - Title in one line, no refresh button */}
           <div style={{ textAlign: 'center', color: 'white', marginBottom: '40px' }}>
             <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '10px' }}>
-              Parent Dashboard
+              Client Dashboard
             </h1>
             <p style={{ fontSize: '1.1rem', opacity: '0.9' }}>
-              Streamline your parent relationships and service management with our comprehensive platform
+              {/* Streamline your parent relationships and service management with our comprehensive platform */}
+              Experience Living Trail's unified platform for one stop service management and support.
             </p>
           </div>
 
@@ -804,7 +806,7 @@ const ParentDashboard = () => {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#2d3748', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '1.8rem' }}>🔐</span>
-                  Logged In Parent Details
+                  Logged In Client Details
                 </h2>
                 <button
                   onClick={handleLogout}
@@ -833,7 +835,7 @@ const ParentDashboard = () => {
                   <div>
                     <div style={{ marginBottom: '15px' }}>
                       <label style={{ fontSize: '12px', color: '#718096', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                        Parent ID
+                        Client ID
                       </label>
                       <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#2d3748', marginTop: '5px' }}>
                         {userData.id}
@@ -842,7 +844,7 @@ const ParentDashboard = () => {
 
                     <div style={{ marginBottom: '15px' }}>
                       <label style={{ fontSize: '12px', color: '#718096', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                        Parent Name
+                        Client Name
                       </label>
                       <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#2d3748', marginTop: '5px' }}>
                         {userData.name}
@@ -931,7 +933,7 @@ const ParentDashboard = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '30px', background: '#f7fafc', padding: '25px', borderRadius: '10px' }}>
               <div>
                 <div style={{ color: '#718096', fontSize: '12px', fontWeight: '600', marginBottom: '8px', textTransform: 'uppercase' }}>
-                  Parent Id/Name
+                  Client Id/Name
                 </div>
                 <div style={{ color: '#2d3748', fontSize: '16px', fontWeight: '600' }}>
                   {userData?.id || 'N/A'}|{userData?.name || 'N/A'}
