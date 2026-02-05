@@ -851,7 +851,8 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
             onChange={handlePhotoChange}
             style={{ display: 'none' }}
             id="photo-upload"
-            required
+            name=""
+            // required
           />
           <label htmlFor="photo-upload" style={{ cursor: 'pointer' }}>
             {photoPreview ? (
