@@ -3,7 +3,7 @@ const RegistrationCards = ({ onOpenForm }) => {
     {
       type: 'parent',
       icon: '/images/client.png',
-      title: 'Client Registration',
+      title: 'Client',
       description: 'Register as a care recipient to receive professional assistance and support services.',
       features: [
         'Access to all care services',
@@ -13,12 +13,12 @@ const RegistrationCards = ({ onOpenForm }) => {
         //'Family connection features'
       ],
       buttonText: 'Register as Client',
-      bgColor: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)',
+      bgColor: 'linear-gradient(135deg, #7dc0edff 0%, #56acdaff 100%)',
     },
     {
       type: 'daughter',
       icon: '/images/rm.png',
-      title: 'RM Registration',
+      title: 'RM',
       description: 'Register as a Relationship Manager to co-ordinate and manage your client\'s care needs.',
       features: [
         'Coordinate with client & service providers',
@@ -28,12 +28,12 @@ const RegistrationCards = ({ onOpenForm }) => {
         //'Family communication hub'
       ],
       buttonText: 'Register as RM',
-      bgColor: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)',
+      bgColor: 'linear-gradient(135deg, #a4df5fc1 0%, #8ddb69ff 100%)',
     },
     {
       type: 'vendor',
       icon: '/images/vendor.png',
-      title: 'Vendor Registration',
+      title: 'Vendor',
       description: 'Register as a service provider to offer your professional care services to families in need.',
       features: [
         'Join our verified provider network',
@@ -43,7 +43,7 @@ const RegistrationCards = ({ onOpenForm }) => {
         'Secure payment processing'
       ],
       buttonText: 'Register as Vendor',
-      bgColor: 'linear-gradient(135deg, #9f7aea 0%, #805ad5 100%)',
+      bgColor: 'linear-gradient(135deg, #eab67aef 0%, #d58f5acd 100%)',
     }
   ]
 
@@ -78,7 +78,9 @@ const RegistrationCards = ({ onOpenForm }) => {
             e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.15)'
           }}
         >
-          <div style={{ fontSize: '4rem', marginBottom: '20px' }}>{card.icon}</div>
+          <div style={{ fontSize: '4rem', marginBottom: '20px', display: 'flex', justifyContent: 'center'}}>
+            <img src={card.icon} alt={`${card.title} Icon`} style={{ width: '64px', height: '64px' }} />
+          </div>
           <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '16px', color: '#2d3748' }}>
             {card.title}
           </h2>

@@ -398,12 +398,12 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
       </div>
 
       {/* Care Requirements Section */}
-      <div style={{ marginBottom: '30px' }}>
+      {/* <div style={{ marginBottom: '30px' }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#2d3748', marginBottom: '20px' }}>
           🏥 Care Requirements
         </h3>
         {renderCareRequirements()}
-      </div>
+      </div> */}
 
       <button type="submit" disabled={isSubmitting} style={{
         width: '100%', background: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)',
@@ -411,7 +411,7 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
         fontWeight: '600', border: 'none', cursor: isSubmitting ? 'not-allowed' : 'pointer',
         opacity: isSubmitting ? 0.7 : 1
       }}>
-        {isSubmitting ? 'Registering...' : 'Complete Parent Registration'}
+        {isSubmitting ? 'Registering...' : 'Complete Client Registration'}
       </button>
     </form>
   )
@@ -1187,11 +1187,11 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
   const getFormConfig = () => {
     switch (selectedRole) {
       case 'parent':
-        return { icon: '👴', title: 'Parent Registration', subtitle: 'Register as a care recipient', badge: 'CLIENT ROLE', badgeColor: '#c6f6d5', badgeTextColor: '#22543d' }
+        return { icon: '/images/client.png', title: 'Client', subtitle: 'Register as a service recipient', badge: 'CLIENT ROLE', badgeColor: '#7dc0edff ', badgeTextColor: '#56acdaff' } 
       case 'daughter':
-        return { icon: '👩', title: 'Daughter Registration', subtitle: 'Register as a family caregiver', badge: 'DAUGHTER ROLE', badgeColor: '#fed7aa', badgeTextColor: '#9c4221' }
+        return { icon: '/images/rm.png', title: 'RM ', subtitle: 'Register as a relationship manager', badge: 'DAUGHTER ROLE', badgeColor: '#a4df5fc1', badgeTextColor: '#8ddb69ff' } 
       case 'vendor':
-        return { icon: '🏢', title: 'Vendor Registration', subtitle: 'Register as a service provider', badge: 'VENDOR ROLE', badgeColor: '#e9d8fd', badgeTextColor: '#553c9a' }
+        return { icon: '/images/vendor.png', title: 'Vendor', subtitle: 'Register as a service provider', badge: 'VENDOR ROLE', badgeColor: '#eab67aef', badgeTextColor: '#d58f5acd' }
       default:
         return { icon: '📝', title: 'Registration', subtitle: 'Complete your registration', badge: 'USER ROLE', badgeColor: '#e2e8f0', badgeTextColor: '#4a5568' }
     }
@@ -1218,7 +1218,9 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
         </button>
 
         <div style={{ textAlign: 'center', marginBottom: '30px', paddingTop: '20px' }}>
-          <div style={{ fontSize: '4rem', marginBottom: '15px' }}>{config.icon}</div>
+          <div style={{ fontSize: '4rem', marginBottom: '15px',  display: 'flex', justifyContent:'center' }}>
+            <img src={config.icon} alt={`${config.title} Icon`} style={{ width: '64px', height: '64px' }} />
+          </div>
           <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#2d3748', marginBottom: '8px' }}>
             {config.title}
           </h2>

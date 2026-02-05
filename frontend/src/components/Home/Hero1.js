@@ -12,7 +12,7 @@ const Hero1 = () => {
              {/* Replace this SVG with your actual exported logo file */}
             <div className="relative w-20 h-20flex items-center justify-center border-4 border-pink-200/50 rounded-full bg-white backdrop-blur-sm shadow-xl">
             <img 
-              src="/images/image.svg" 
+              src="/images/logo.svg" 
               alt="Living Trail Logo" 
               className="w-full h-full object-contain"
             />

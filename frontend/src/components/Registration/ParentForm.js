@@ -220,7 +220,7 @@ const ParentForm = ({ onSubmit, isSubmitting, onClose }) => {
           disabled={isSubmitting}
           className="w-full bg-gradient-secondary text-white py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
         >
-          {isSubmitting ? 'Registering...' : 'Complete Parent Registration'}
+          {isSubmitting ? 'Registering...' : 'Complete Client Registration'}
         </button>
       </form>
     </div>
