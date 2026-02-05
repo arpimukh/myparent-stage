@@ -280,12 +280,12 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
         
         if (formData.photo) {
           submitData.append('photo', formData.photo)
-          console.log('✅ Photo attached:', formData.photo.name)
+          console.log('✅ Photo attached:')
         }
         
         if (formData.identity_doc) {
           submitData.append('identity_doc', formData.identity_doc)
-          console.log('✅ Identity doc attached:', formData.identity_doc.name)
+          console.log('✅ Identity doc attached:')
         }
       } else {
         // Parent/Daughter submission to /api/auth/register
