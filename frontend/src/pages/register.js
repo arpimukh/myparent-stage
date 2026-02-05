@@ -20,7 +20,7 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Register - Parent Care Services</title>
+        <title>Register - Living Trail</title>
         <meta name="description" content="Register for Parent Care Services - Choose your role" />
       </Head>
       
@@ -28,7 +28,7 @@ export default function Register() {
         <div className="container mx-auto px-4">
           <div className="text-center text-white mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Living Trail Services Registration
+              Living Trail  Registration
             </h1>
             <p className="text-xl opacity-90">
               Choose your role to get started with our comprehensive care platform
