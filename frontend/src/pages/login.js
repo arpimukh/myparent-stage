@@ -29,7 +29,7 @@ export default function LoginPage() {
   const loginCards = [
     {
       role: 'parent',
-      icon: '👴',
+      icon: '/images/client.png',
       title: 'Client Login',
       description: 'Sign in to your Living Trail portal to unlock our full suite of on-demand services. From master cooks and safe drivers to meticulous bathroom cleaning and gardening, we handle the chores so you can focus on the trail ahead.',
       // 'Your Service Hub, Personalized.Log in to your Living Trail dashboard to manage your premium home services. Whether you need to schedule a five-star cook for tonight, book your driver, or refresh your home with our specialized cleaning teams, your personal trail to a simplified lifestyle starts here.Premium assistance is just one click away.',
@@ -37,14 +37,14 @@ export default function LoginPage() {
     },
     {
       role: 'daughter',
-      icon: '👩',
+      icon: '/images/rm.png',
       title: 'RM Login',
       description: 'Master the Trail. Log in to the Living Trail RM Command Center. Oversee your assigned client portfolios, monitor service provider performance in real-time, and ensure every driver, cook, and cleaning professional maintains our gold standard. Your expertise turns services into seamless experiences.',
       color: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)'
     },
     {
       role: 'vendor',
-      icon: '🏢',
+      icon: '/images/vendor.png',
       title: 'Vendor Login: Ready to hit the Trail? ',
       description: 'Fuel Your Professional Journey. Access the Living Trail Vendor Portal to manage your roster and growth. Log in to check your active deployments, review client feedback, and ensure every service you provide leaves a trail of perfection. Let your expertise meets our clientele’s needs.',
       color: 'linear-gradient(135deg, #9f7aea 0%, #805ad5 100%)'
@@ -56,7 +56,7 @@ export default function LoginPage() {
       <Head>
         <title>Way to Living Trail &gt;&gt; </title>
       </Head>
-      
+       <Hero1 />
       <div style={{
         minHeight: '100vh',
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -65,7 +65,7 @@ export default function LoginPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', color: 'white', marginBottom: '48px' }}>
             <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '16px' }}>
-              Premium Member Login
+              Premium Member & partner Login
             </h1>
             <p style={{ fontSize: '1.25rem', opacity: '0.9' }}>
               Select your role to access your dashboard
@@ -79,7 +79,10 @@ export default function LoginPage() {
             maxWidth: '900px',
             margin: '0 auto'
           }}>
+            <table>
+            <tr>
             {loginCards.map((card) => (
+              <td>
               <div
                 key={card.role}
                 onClick={() => handleRoleSelect(card.role)}
@@ -102,7 +105,10 @@ export default function LoginPage() {
                   e.currentTarget.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.15)'
                 }}
               >
-                <div style={{ fontSize: '4rem', marginBottom: '20px' }}>{card.icon}</div>
+                <div style={{ fontSize: '4rem', marginBottom: '20px' }}>
+                  <image src={card.icon} alt={`${card.title} Icon`} style={{ width: '64px', height: '64px' }} />
+                  {/* {card.icon} */}
+                  </div>
                 <h2 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '16px', color: '#2d3748' }}>
                   {card.title}
                 </h2>
@@ -124,7 +130,10 @@ export default function LoginPage() {
                   Login as {card.role.charAt(0).toUpperCase() + card.role.slice(1)}
                 </button>
               </div>
+              </td>
             ))}
+            </tr>
+            </table>
           </div>
         </div>
       </div>
