@@ -647,7 +647,7 @@ const ParentDashboard = () => {
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           padding: '40px 20px'
         }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
             {/* Header */}
             <div style={{ marginBottom: '30px' }}>
               <button
@@ -781,7 +781,7 @@ const ParentDashboard = () => {
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         padding: '40px 20px'
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{  margin: '0 auto' }}>
           {/* Header - Title in one line, no refresh button */}
           <div style={{ textAlign: 'center', color: 'white', marginBottom: '40px' }}>
             <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '10px' }}>
