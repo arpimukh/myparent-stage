@@ -30,22 +30,23 @@ export default function LoginPage() {
     {
       role: 'parent',
       icon: '👴',
-      title: 'Parent Login',
-      description: 'Access your care services and health monitoring dashboard',
+      title: 'Client Login',
+      description: 'Sign in to your Living Trail portal to unlock our full suite of on-demand services. From master cooks and safe drivers to meticulous bathroom cleaning and gardening, we handle the chores so you can focus on the trail ahead.',
+      // 'Your Service Hub, Personalized.Log in to your Living Trail dashboard to manage your premium home services. Whether you need to schedule a five-star cook for tonight, book your driver, or refresh your home with our specialized cleaning teams, your personal trail to a simplified lifestyle starts here.Premium assistance is just one click away.',
       color: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)'
     },
     {
       role: 'daughter',
       icon: '👩',
-      title: 'Daughter Login',
-      description: 'Manage and coordinate your parent\'s care services',
+      title: 'RM Login',
+      description: 'Master the Trail. Log in to the Living Trail RM Command Center. Oversee your assigned client portfolios, monitor service provider performance in real-time, and ensure every driver, cook, and cleaning professional maintains our gold standard. Your expertise turns services into seamless experiences.',
       color: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)'
     },
     {
       role: 'vendor',
       icon: '🏢',
-      title: 'Vendor Login',
-      description: 'Access your service provider dashboard and client management',
+      title: 'Vendor Login: Ready to hit the Trail? ',
+      description: 'Fuel Your Professional Journey. Access the Living Trail Vendor Portal to manage your roster and growth. Log in to check your active deployments, review client feedback, and ensure every service you provide leaves a trail of perfection. Let your expertise meets our clientele’s needs.',
       color: 'linear-gradient(135deg, #9f7aea 0%, #805ad5 100%)'
     }
   ]
@@ -53,7 +54,7 @@ export default function LoginPage() {
   return (
     <>
       <Head>
-        <title>Member Login - Parent Care Services</title>
+        <title>Way to Living Trail &gt;&gt; </title>
       </Head>
       
       <div style={{
@@ -64,7 +65,7 @@ export default function LoginPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', color: 'white', marginBottom: '48px' }}>
             <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '16px' }}>
-              Member Login
+              Premium Member Login
             </h1>
             <p style={{ fontSize: '1.25rem', opacity: '0.9' }}>
               Select your role to access your dashboard

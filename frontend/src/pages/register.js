@@ -28,7 +28,7 @@ export default function Register() {
         <div className="container mx-auto px-4">
           <div className="text-center text-white mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Parent Care Services Registration
+              Living Trail Services Registration
             </h1>
             <p className="text-xl opacity-90">
               Choose your role to get started with our comprehensive care platform

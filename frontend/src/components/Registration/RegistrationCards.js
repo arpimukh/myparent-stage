@@ -2,37 +2,37 @@ const RegistrationCards = ({ onOpenForm }) => {
   const cards = [
     {
       type: 'parent',
-      icon: '👴',
-      title: 'Parent Registration',
+      icon: '/images/client.png',
+      title: 'Client Registration',
       description: 'Register as a care recipient to receive professional assistance and support services.',
       features: [
         'Access to all care services',
         '24/7 healthcare monitoring',
         'Emergency contact system',
-        'Personalized care plans',
-        'Family connection features'
+        'Personalized care plans'
+        //'Family connection features'
       ],
-      buttonText: 'Register as Parent',
+      buttonText: 'Register as Client',
       bgColor: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)',
     },
     {
       type: 'daughter',
-      icon: '👩',
-      title: 'Daughter Registration',
-      description: 'Register as a family caregiver to coordinate and manage your parent\'s care needs.',
+      icon: '/images/rm.png',
+      title: 'RM Registration',
+      description: 'Register as a Relationship Manager to co-ordinate and manage your client\'s care needs.',
       features: [
-        'Coordinate parent\'s care services',
+        'Coordinate with client & service providers',
         'Real-time updates and notifications',
         'Service scheduling and management',
-        'Emergency alerts and contacts',
-        'Family communication hub'
+        //'Emergency alerts and contacts',
+        //'Family communication hub'
       ],
-      buttonText: 'Register as Daughter',
+      buttonText: 'Register as RM',
       bgColor: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)',
     },
     {
       type: 'vendor',
-      icon: '🏢',
+      icon: '/images/vendor.png',
       title: 'Vendor Registration',
       description: 'Register as a service provider to offer your professional care services to families in need.',
       features: [
