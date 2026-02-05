@@ -178,7 +178,7 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
     if (!formData.password.trim()) newErrors.password = 'Password is required'
     if (!formData.confirmPassword.trim()) newErrors.confirmPassword = 'Confirm password is required'
     if (!formData.address.trim()) newErrors.address = 'Address is required'
-    if (!formData.photo) newErrors.photo = 'Profile photo is required'
+    //if (!formData.photo) newErrors.photo = 'Profile photo is required'
 
     // Email format validation
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -839,7 +839,7 @@ const FormModal = ({ isOpen, onClose, selectedRole }) => {
     <>
       <div style={{ marginBottom: '20px' }}>
         <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: '#4a5568', fontSize: '14px' }}>
-          Profile Photo <span style={{ color: '#e53e3e' }}>*</span>
+          Profile Photo {/* <span style={{ color: '#e53e3e' }}>*</span> */}
         </label>
         <div style={{
           border: `2px dashed ${errors.photo ? '#e53e3e' : '#cbd5e0'}`,

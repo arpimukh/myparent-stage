@@ -38,15 +38,22 @@ const Login = ({ role, onClose, onSuccess }) => {
       setIsLoading(false)
     }
   }
-
+/*
+badgeColor: '#7dc0edff ', badgeTextColor: '#56acdaff' } 
+      case 'daughter':
+        return { icon: '/images/rm.png', title: 'RM ', subtitle: 'Register as a relationship manager', badge: 'DAUGHTER ROLE', badgeColor: '#a4df5fc1', badgeTextColor: '#8ddb69ff' } 
+      case 'vendor':
+        return { icon: '/images/vendor.png', title: 'Vendor', subtitle: 'Register as a service provider', badge: 'VENDOR ROLE', badgeColor: '#eab67aef', badgeTextColor: '#d58f5acd' }
+      default:
+*/
   const getRoleConfig = () => {
     switch (role) {
       case 'parent':
-        return { icon: '👴', title: 'Client Login', color: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)' }
+        return { icon: '/images/client.png', title: 'Client Login', color: 'linear-gradient(135deg, #7dc0edff 0%, #56acdaff 100%)' }
       case 'daughter':
-        return { icon: '👩', title: 'RM Login', color: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)' }
+        return { icon: '/images/rm.png', title: 'RM Login', color: 'linear-gradient(135deg, #a4df5fc1 0%, #8ddb69ff 100%)' }
       case 'vendor':
-        return { icon: '🏢', title: 'Vendor Login', color: 'linear-gradient(135deg, #9f7aea 0%, #805ad5 100%)' }
+        return { icon: '/images/vendor.png', title: 'Vendor Login', color: 'linear-gradient(135deg, #eab67aef 0%, #d58f5acd 100%)' }
       default:
         return { icon: '👤', title: 'Login', color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }
     }
@@ -75,7 +82,9 @@ const Login = ({ role, onClose, onSuccess }) => {
         </button>
 
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-          <div style={{ fontSize: '4rem', marginBottom: '15px' }}>{config.icon}</div>
+          <div style={{ fontSize: '4rem', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
+            <img src={config.icon} alt="Role Icon" style={{ width: '64px', height: '64px' }} />
+            </div>
           <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#2d3748', marginBottom: '8px' }}>
             {config.title}
           </h2>
