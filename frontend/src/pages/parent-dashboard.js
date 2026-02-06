@@ -775,16 +775,18 @@ const ParentDashboard = () => {
         <title>Client Management - Client Care Services</title>
         {/* <title>Parent Management - Parent Care Services</title> */}
       </Head>
-
-      <div style={{
+      <div className="min-h-screen bg-gradient-primary py-20">
+        <div className="container mx-auto px-4">
+          
+      {/* <div style={{
         minHeight: '100vh',
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         padding: '40px 20px'
-      }}>
-        <div style={{  margin: '0 auto' }}>
+      }}> */}
+        {/* <div style={{  margin: '0 auto' }}>
           {/* Header - Title in one line, no refresh button */}
           <div style={{ textAlign: 'center', color: 'white', marginBottom: '40px' }}>
-            <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '10px' }}>
+            <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '10px' }}> 
               Client Dashboard
             </h1>
             <p style={{ fontSize: '1.1rem', opacity: '0.9' }}>
@@ -968,7 +970,7 @@ const ParentDashboard = () => {
 
           {/* Active Service Queue Section */}
           <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px', overflowX: 'auto', overflowY: 'hidden', scrollBehavior: 'smooth'}}>
               <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#2d3748' }}>
                 Active Service Requests
               </h2>
@@ -1050,7 +1052,7 @@ const ParentDashboard = () => {
                               <select className="bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl font-bold text-sm outline-none" defaultValue={bookingData.time}  onChange={(e) => setBookingData({ ...bookingData, time: e.target.value })}>
                                 <option value="">Start Slot</option>
                                 {getSlots().map(slot =>  
-        <option value={slot.display} >{slot.display}</option>)}
+                                <option value={slot.display} >{slot.display}</option>)}
                               </select>
                               <select className="bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl font-bold text-sm outline-none" onChange={(e) => setBookingData({ ...bookingData, duration: parseInt(e.target.value) })}>
                                 {[1, 2, 4, 8].map(h => <option key={h} value={h}>{h} Hour{h > 1 ? 's' : ''}</option>)}
@@ -1174,7 +1176,7 @@ const ParentDashboard = () => {
               borderRadius: '10px 10px 0 0',
               fontWeight: '600',
               fontSize: '12px'
-            }}>
+              }}>
 
               <div>SERVICE TYPE</div>
               <div>SERVICE DESCRIPTION</div>
@@ -1188,7 +1190,7 @@ const ParentDashboard = () => {
               {/*this column contains escalate button*/}
 
               {/* <div>DAUGHTER CONTACT NO</div>
-    <div>SERVICE STATUS</div> */}
+              <div>SERVICE STATUS</div> */}
             </div>
 
             {/* Loading State */}
@@ -1205,87 +1207,88 @@ const ParentDashboard = () => {
             )}
 
             {/* Client Services Table Rows - Always show dummy data */}
-            {isLoadingServices && clientServices.map((service, index) => (
-              <div key={index} style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 2fr 2fr 1fr 1fr  1fr 1fr 1fr 1fr',
-                padding: '5px',
-                borderBottom: '1px solid #f0f0f0',
-                alignItems: 'center',
-                background: index % 2 === 0 ? '#fafafa' : 'white',
-                fontSize: '13px'
-              }}>
+                  <div style={{ overflowX: 'auto', overflowY: 'hidden', scrollBehavior: 'smooth' }}>
+                    {isLoadingServices && clientServices.map((service, index) => (
+                    <div key={index} style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 2fr 2fr 1fr 1fr  1fr 1fr 1fr 1fr',
+                      padding: '5px',
+                      borderBottom: '1px solid #f0f0f0',
+                      alignItems: 'center',
+                      background: index % 2 === 0 ? '#fafafa' : 'white',
+                      fontSize: '13px',
+                      minWidth: '1200px'
+                      }}>
 
-                <div >{service.service_type}</div>
-                <div> {service.special_instructions ? service.special_instructions : 'Basic ' + service.service_type + ' service'}. <br /> charge: {service.service_charge}
-                  <br />
-                </div>
-                <div style={{ fontWeight: '600' }}>{service.is_verified ? (
-                  <MdVerified style={{ color: '#1d9bf0', verticalAlign: 'middle' }} />
-                ) : ''} {service.vendor_name} <br />
-                  <LuPhone className="w-4 h-4 " />{service.vendor_contact_no} <br />
-                  {/* <StarRating rating={service.rating}
-totalStars={5} 
-onRatingChange={(rating) => console.log('Selected:', rating)} 
-/>  */}
-                  <div className="flex justify-left mb-4">
-                    {
-                      [1, 2, 3, 4, 5].map((star) => (
-                        <Star
+                      <div >{service.service_type}</div>
+                      <div> {service.special_instructions ? service.special_instructions : 'Basic ' + service.service_type + ' service'}. <br /> charge: {service.service_charge}
+                      <br />
+                      </div>
+                      <div style={{ fontWeight: '600' }}>{service.is_verified ? (
+                      <MdVerified style={{ color: '#1d9bf0', verticalAlign: 'middle' }} />
+                      ) : ''} {service.vendor_name} <br />
+                      <LuPhone className="w-4 h-4 " />{service.vendor_contact_no} <br />
+                      
+                      <div className="flex justify-left mb-4">
+                        {
+                        [1, 2, 3, 4, 5].map((star) => (
+                          <Star
                           size={16}
                           fill={service.rating >= star ? "#f59e0b" : "gray"}
                           className={service.rating >= star ? "text-amber-500" : "text-slate-200"}
                           strokeWidth={1.5}
-                        />
-                      ))}
-                  </div>
-                  {/* {service.phone} */}
+                          />
+                        ))}
+                      </div>
+                      {/* {service.phone} */}
 
-                </div>
-                {/* <div>{service.waitingDays}</div> */}
-                <div>{service.booking_date}</div>
-                <div>{service.created_at}</div>
-                <div>{service.updated_at}</div>
-                <div style={{ fontWeight: '600', color: service.status === 'open' || service.status === 'assigned' || service.status === 'accepted' ? '#38a169' : service.status === 'escalated' ? '#dd6b20' : '#e53e3e' }}>{service.status.toUpperCase()}</div>
-                <div>
-                  <button
-                    onClick={() => handleServiceStatusChange(index, 'escalated')}
-                    style={{
-                      background: '#e2e8f0',
-                      color: '#4a5568',
-                      border: 'none',
-                      padding: '12px 24px',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      cursor: 'pointer',
-                      fontSize: '14px'
-                    }}
-                  >
-                    Escalate
-                  </button>
-                </div>
-                <div>
-                  <button
-                    onClick={() => handleServiceStatusChange(index, 'cancelled')}
-                    style={{
-                      background: '#e2e8f0',
-                      color: '#4a5568',
-                      border: 'none',
-                      padding: '12px 24px',
-                      borderRadius: '8px',
-                      fontWeight: '600',
-                      cursor: 'pointer',
-                      fontSize: '14px'
-                    }}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+                      </div>
+                      {/* <div>{service.waitingDays}</div> */}
+                      <div>{service.booking_date}</div>
+                      <div>{service.created_at}</div>
+                      <div>{service.updated_at}</div>
+                      <div style={{ fontWeight: '600', color: service.status === 'open' || service.status === 'assigned' || service.status === 'accepted' ? '#38a169' : service.status === 'escalated' ? '#dd6b20' : '#e53e3e' }}>{service.status.toUpperCase()}</div>
+                      <div>
+                      <button
+                        onClick={() => handleServiceStatusChange(index, 'escalated')}
+                        style={{
+                        background: '#e2e8f0',
+                        color: '#4a5568',
+                        border: 'none',
+                        padding: '12px 24px',
+                        borderRadius: '8px',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        fontSize: '14px'
+                        }}
+                      >
+                        Escalate
+                      </button>
+                      </div>
+                      <div>
+                      <button
+                        onClick={() => handleServiceStatusChange(index, 'cancelled')}
+                        style={{
+                        background: '#e2e8f0',
+                        color: '#4a5568',
+                        border: 'none',
+                        padding: '12px 24px',
+                        borderRadius: '8px',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        fontSize: '14px'
+                        }}
+                      >
+                        Cancel
+                      </button>
+                      </div>
+                    </div>
+                    ))}
+                  </div>
+                  </div>
 
           {/* Completed Service Queue Section */}
+          
           <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
             <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#2d3748', marginBottom: '25px' }}>
               Closed Service Requests
@@ -1316,7 +1319,7 @@ onRatingChange={(rating) => console.log('Selected:', rating)}
               {/* <div>DAUGHTER CONTACT NO</div>
     <div>SERVICE STATUS</div> */}
             </div>
-
+            <div style={{ overflowX: 'auto', overflowY: 'hidden', scrollBehavior: 'smooth' }}>
             {/* Loading State */}
             {!isLoadingServices && (
               <div style={{
@@ -1415,7 +1418,9 @@ onRatingChange={(rating) => console.log('Selected:', rating)}
                   </button>
                 </div>
               </div>
+            
             ))}
+            </div>
           </div>
         </div>
       </div>
