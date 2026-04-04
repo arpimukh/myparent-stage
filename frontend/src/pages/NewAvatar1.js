@@ -36,7 +36,18 @@ const OFFERS = [
   { id: 2, title: 'Summer Car Spa Sale', desc: 'Packages starting at $29', bgColor: 'from-blue-500 to-indigo-500' },
   { id: 3, title: 'Refer a Friend', desc: 'Earn $10 credit per referral', bgColor: 'from-indigo-600 to-purple-500' },
 ];
-
+ const [bookingData, setBookingData] = useState({
+    service: SERVICES[0],
+    selectedSubtypes: [], //{'rate_type':'hourly','subtype':'Regular','cost':0},{rate_type:'flat','subtype':'Premium','cost':50}
+    date: '',
+    displayDate: '',
+    time: '',
+    duration: 1,
+    address: '',
+    pincode: '',
+    instructions: '',
+    id: ''
+  });
 const TESTIMONIALS = [
   {
     id: 1,
@@ -64,6 +75,31 @@ const TESTIMONIALS = [
   }
 ];
 
+const fetchServiceSubtypes = async (selectedType_id) => {
+    setIsLoading(true);
+    setTimeout(async () => {
+      try {
+        const response = await fetch(`http://localhost:5001/api/services/service-type/${selectedType_id}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          }
+        })
+        const result = await response.json();
+        console.log('📦 service-type API response:', result)
+
+        if (result.success) {
+          setServiceData(result.data.serviceDetails[0].resource_details);
+          console.log('Select serviceData:', result.data.serviceDetails[0].resource_details);
+          setIsLoading(false);
+        }
+      } catch (err) {
+        console.error("Failed to load services", err)
+        setIsLoading(false);
+      }
+    }, 400);
+  }
+
 // --- Components ---
 
 
@@ -71,14 +107,15 @@ const Hero = () => {
   const [pincode, setPincode] = useState('');
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full -z-10">
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/services-collage-placeholder.png')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      {/*<div className="absolute top-0 left-0 w-full h-full bg-black/40 -z-10" />
+       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-100 rounded-full blur-3xl opacity-50" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100 rounded-full blur-3xl opacity-50" />
-      </div>
+      </div> */}
 
-      <div className="max-w-7xl mx-auto px-4 text-center">
-         {/* Pincode Search */}
+      <div className="top-0 max-w-7xl mx-auto px-4 text-center" >
+           {/* Pincode Search */}
         <div className="max-w-md mx-auto relative group">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-purple-600 transition-colors">
             <MapPin className="w-5 h-5" />
@@ -116,7 +153,7 @@ const Hero = () => {
 const ServicesSection = () => {
   return (
     <section className="bg-gray-50 py-24">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="top-20 max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             {/* <span className="text-purple-600 font-bold tracking-widest uppercase text-sm">Our Ecosystem</span> */}
@@ -125,11 +162,20 @@ const ServicesSection = () => {
             <h4 className="text-gray-500" >Every professional is background checked and trained to deliver the highest standard of service.</h4>
           </div>
         </div>
-
+{/*
+{SERVICES.map((s) => (
+                                <button key={s.id} onClick={() => { setBookingData({ ...bookingData, service: s }); fetchServiceSubtypes(s.service_type_id); setStep(2); }}
+                                  className="flex flex-col items-center justify-center p-6 rounded-3xl border-2 border-slate-50 bg-slate-50 hover:border-indigo-600 hover:bg-white transition-all group"
+                                >
+                                  <span className="mb-3 p-3 bg-white rounded-2xl shadow-sm group-hover:text-indigo-600">{s.icon}</span>
+                                  <span className="font-bold text-slate-700 text-sm">{s.label}</span>
+                                </button>
+                              ))}
+*/}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
           {SERVICES.map((service) => (
-            <div 
-              key={service.id} 
+            <button 
+              key={service.id} onClick={() => { setBookingData({ ...bookingData, service: service }); fetchServiceSubtypes(service.service_type_id); }}
               className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-purple-200 hover:shadow-2xl hover:shadow-purple-100 transition-all cursor-pointer group"
             >
               <div className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
@@ -141,7 +187,7 @@ const ServicesSection = () => {
               <p className="text-xs text-gray-400 mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                 Book Now <ChevronRight className="w-3 h-3" />
               </p>
-            </div>
+            </button>
           ))}
         </div>
       </div>
